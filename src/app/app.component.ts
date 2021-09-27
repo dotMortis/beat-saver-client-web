@@ -34,7 +34,7 @@ export class AppComponent implements OnInit {
         this.imagesSliderOptions = [
             {
                 breakpoint: '1024px',
-                numVisible: 4,
+                numVisible: 3,
                 numScroll: 1
             },
             {
