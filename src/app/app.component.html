@@ -1,0 +1,24 @@
+<div class="pt-3 container">
+    <div class="banner">
+        <div class="content">
+            <h1>BeatSaver<span class="client">Client</span></h1>
+            <div class="subline">
+                <p>BeatSaver.exe by <span class="dev-name">dotMortis</span></p>
+            </div>
+        </div>
+        <div class="social">
+            <a
+                pRipple
+                href="https://github.com/dotMortis/beat-saver-client"
+                pTooltip="BeatSaverClient GitHub"
+                [showDelay]="200"
+                [hideDelay]="250"
+                ><fa-icon [icon]="['fab', 'github-square']"></fa-icon
+            ></a>
+        </div>
+        <video autoplay [muted]="true" loop>
+            <source src="assets/splash.webm" type="video/webm" />
+        </video>
+    </div>
+    <div class="main content"></div>
+</div>
