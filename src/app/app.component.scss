@@ -92,7 +92,7 @@
             display: flex;
             padding: 0.25rem 0.75rem;
             border-radius: 0.5rem;
-            background-color: lighten(#28a745, 35);
+            background-color: darken(#9fa8da, 15);
             color: var(--surface-a);
             align-items: center;
             text-decoration: none;
@@ -106,7 +106,7 @@
             }
 
             &:hover {
-                background-color: lighten(#28a745, 25);
+                background-color: darken(#9fa8da, 20);
                 box-shadow: 0 0 3px 0 white;
             }
         }
