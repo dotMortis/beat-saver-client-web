@@ -1,26 +1,154 @@
-<div class="pt-3 container">
-    <div class="banner">
-        <div class="content">
-            <h1>BeatSaver<span class="client">Client</span></h1>
-            <div class="subline">
-                <p>BeatSaver.exe by <span class="dev-name">dotMortis</span></p>
+<p-scrollPanel styleClass="custombar1" [style]="{ width: '100vw', height: '100vh' }">
+    <div class="py-4 container">
+        <div class="banner">
+            <div class="content">
+                <h1>BeatSaver<span class="client">Client</span></h1>
+                <div class="subline d-flex">
+                    <p>BeatSaver.exe by <span class="dev-name">dotMortis</span></p>
+                    <p class="ml-auto color-danger">OpenSource</p>
+                </div>
+            </div>
+            <div class="social">
+                <a
+                    pRipple
+                    href="https://github.com/dotMortis/beat-saver-client"
+                    pTooltip="BeatSaverClient GitHub"
+                    [showDelay]="200"
+                    [hideDelay]="250"
+                    ><fa-icon [icon]="['fab', 'github-square']"></fa-icon
+                ></a>
+            </div>
+            <video autoplay [muted]="true" loop>
+                <source src="assets/splash.webm" type="video/webm" />
+            </video>
+        </div>
+        <div class="main-content row pt-4">
+            <!-- prettier-ignore -->
+            <div class="col-12 pb-4">
+                <div class="content-item d-flex">
+                    <div class="d-flex flex-wrap align-self-center mr-4">
+                        <a pTooltip="Download" [showDelay]="250" [hideDelay]="250" class="download-btn mb-2" *ngIf="exeAsset" [href]="exeAsset.browser_download_url">
+                            <i class="pi pi-cloud-download"></i>
+                            <div class="d-flex flex-wrap">
+                                <div>
+                                    {{latestVersion?.tag_name}}
+                                </div>
+                                <div class="break"></div>
+                                <div>
+                                    {{latestVersion?.published_at | date:'dd-MM-yy'}}
+                                </div>
+                            </div>
+                        </a>
+                        <div class="break"></div>
+                        <a pTooltip="Repository" [showDelay]="250" [hideDelay]="250" class="repo-btn mr-2" target="_blank" href="https://github.com/dotMortis/beat-saver-client">
+                            <fa-icon class="pr-2" [icon]="['fab', 'github-square']"></fa-icon >        
+                            Repository                    
+                        </a>
+                        <a pTooltip="Releases" [showDelay]="250" [hideDelay]="250" class="repo-btn" target="_blank" href="https://github.com/dotMortis/beat-saver-client/releases">
+                            Releases
+                        </a>
+                    </div>
+                        
+                    <markdown class="w-100 align-self-center" ngPreserveWhitespaces emoji>
+                        Hey dear BeatSaber community :heart:
+                    
+                        I would like to present you a new way to manage your BeatSaber custom songs quickly and easily.\
+                        This project was launched with the intention of simplifying song `downloading` and `management`.\
+                        There are already more ideas for this and I'm also happy to get some `inspiration` from `YOU`.
+                    </markdown>
+                </div>
+                
+            </div>
+            <div class="col-12 pb-4">
+                <div class="content-item pb-0 pt-4">
+                    <p-carousel
+                        [autoplayInterval]="5000"
+                        [value]="images"
+                        [numVisible]="4"
+                        [numScroll]="1"
+                        [responsiveOptions]="imagesSliderOptions"
+                    >
+                        <ng-template let-info pTemplate="item">
+                            <img
+                                [pTooltip]="info.alt"
+                                tooltipPosition="top"
+                                [showDelay]="200"
+                                [hideDelay]="250"
+                                (click)="onImageOpen(info)"
+                                class="p-1 m-1 slider-img"
+                                [src]="info.src"
+                                width="250px"
+                                height="175px"
+                                style="object-fit: contain; object-position: center"
+                                [alt]="info.alt"
+                            />
+                        </ng-template>
+                    </p-carousel>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 pb-2">
+                <div class="content-item">
+                    <p-scrollPanel
+                        styleClass="custombar1"
+                        [style]="{ width: '100%', 'height': '300px' }"
+                    >
+                        <markdown
+                            src="https://raw.githubusercontent.com/dotMortis/beat-saver-client/master/CHANGELOG.md"
+                        ></markdown>
+                    </p-scrollPanel>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 pb-2">
+                <div class="content-item">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <i class="pi pi-check mr-3 color-success"></i>BeatSaver inspired design
+                        </li>
+                        <li class="list-group-item">
+                            <i class="pi pi-check mr-3 color-success"></i>Browse custom songs from
+                            BeatSaver
+                        </li>
+                        <li class="list-group-item">
+                            <i class="pi pi-check mr-3 color-success"></i>Download/Install songs
+                        </li>
+                        <li class="list-group-item">
+                            <i class="pi pi-check mr-3 color-success"></i>Browse installed songs
+                        </li>
+                        <li class="list-group-item">
+                            <i class="pi pi-check mr-3 color-success"></i>Delete installed sogs
+                        </li>
+                        <li class="list-group-item">
+                            <i class="pi pi-check mr-3 color-success"></i>Show personal song stats
+                        </li>
+                        <li class="list-group-item">
+                            <i class="pi pi-check mr-3 color-success"></i>Download queue
+                        </li>
+                        <li class="list-group-item">
+                            <i class="pi pi-clock mr-3 color-warning" pTooltip="Coming soon"></i
+                            >Mappers pages
+                        </li>
+                        <li class="list-group-item">
+                            <i class="pi pi-clock mr-3 color-warning" pTooltip="Coming soon"></i
+                            >Playlist manager
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
-        <div class="social">
-            <a
-                pRipple
-                href="https://github.com/dotMortis/beat-saver-client"
-                pTooltip="BeatSaverClient GitHub"
-                [showDelay]="200"
-                [hideDelay]="250"
-                ><fa-icon [icon]="['fab', 'github-square']"></fa-icon
-            ></a>
-        </div>
-        <video autoplay [muted]="true" loop>
-            <source src="assets/splash.webm" type="video/webm" />
-        </video>
     </div>
-    <div class="main content">
-        <p>A BeatSaver Desktop client.</p>
-    </div>
-</div>
+    <p-dialog
+        [modal]="true"
+        [dismissableMask]="true"
+        [header]="selectedImage?.alt || 'Screenshot'"
+        [(visible)]="showImage"
+        styleClass="img-dialog"
+        [style]="{width: 'auto', 'max-width': '90vw'}"
+    >
+        <img
+            [src]="selectedImage?.src"
+            [alt]="selectedImage?.alt"
+            style="max-width: 800px; width: 100%"
+        />
+    </p-dialog>
+    <p-scrollTop class="scrolltop" target="parent" [threshold]="100"></p-scrollTop>
+</p-scrollPanel>
