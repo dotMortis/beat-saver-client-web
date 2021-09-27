@@ -23,32 +23,49 @@
             </video>
         </div>
         <div class="main-content row pt-4">
-            <!-- prettier-ignore -->
             <div class="col-12 pb-4">
                 <div class="content-item d-flex">
-                    <div class="d-flex flex-wrap align-self-center mr-4">
-                        <a pTooltip="Download" [showDelay]="250" [hideDelay]="250" class="download-btn mb-2" *ngIf="exeAsset" [href]="exeAsset.browser_download_url">
+                    <div class="dl-btn-container d-flex flex-wrap align-self-center mr-4">
+                        <a
+                            pTooltip="Download"
+                            [showDelay]="250"
+                            [hideDelay]="250"
+                            class="download-btn mb-1"
+                            *ngIf="exeAsset"
+                            [href]="exeAsset.browser_download_url"
+                        >
                             <i class="pi pi-cloud-download"></i>
                             <div class="d-flex flex-wrap">
-                                <div>
-                                    {{latestVersion?.tag_name}}
-                                </div>
+                                <div>{{latestVersion?.tag_name}}</div>
                                 <div class="break"></div>
-                                <div>
-                                    {{latestVersion?.published_at | date:'dd-MM-yy'}}
-                                </div>
+                                <div>{{latestVersion?.published_at | date:'dd-MM-yy'}}</div>
                             </div>
                         </a>
                         <div class="break"></div>
-                        <a pTooltip="Repository" [showDelay]="250" [hideDelay]="250" class="repo-btn mr-2" target="_blank" href="https://github.com/dotMortis/beat-saver-client">
-                            <fa-icon class="pr-2" [icon]="['fab', 'github-square']"></fa-icon >        
-                            Repository                    
+                        <a
+                            pTooltip="Repository"
+                            [showDelay]="250"
+                            [hideDelay]="250"
+                            class="repo-btn mb-1"
+                            target="_blank"
+                            href="https://github.com/dotMortis/beat-saver-client"
+                        >
+                            <fa-icon class="pr-2" [icon]="['fab', 'github-square']"></fa-icon>
+                            Repository
                         </a>
-                        <a pTooltip="Releases" [showDelay]="250" [hideDelay]="250" class="repo-btn" target="_blank" href="https://github.com/dotMortis/beat-saver-client/releases">
+                        <a
+                            pTooltip="Releases"
+                            [showDelay]="250"
+                            [hideDelay]="250"
+                            class="repo-btn"
+                            target="_blank"
+                            href="https://github.com/dotMortis/beat-saver-client/releases"
+                        >
+                            <fa-icon class="pr-2" [icon]="['fab', 'github-square']"></fa-icon>
                             Releases
                         </a>
                     </div>
-                        
+                    <!-- prettier-ignore -->
                     <markdown class="w-100 align-self-center" ngPreserveWhitespaces emoji>
                         Hey dear BeatSaber community :heart:
                     
@@ -57,7 +74,6 @@
                         There are already more ideas for this and I'm also happy to get some `inspiration` from `YOU`.
                     </markdown>
                 </div>
-                
             </div>
             <div class="col-12 pb-4">
                 <div class="content-item pb-0 pt-4">
@@ -86,7 +102,7 @@
                     </p-carousel>
                 </div>
             </div>
-            <div class="col-12 col-md-6 pb-2">
+            <div class="col-12 col-md-6 pb-4">
                 <div class="content-item">
                     <p-scrollPanel
                         styleClass="custombar1"
@@ -98,7 +114,7 @@
                     </p-scrollPanel>
                 </div>
             </div>
-            <div class="col-12 col-md-6 pb-2">
+            <div class="col-12 col-md-6 pb-4">
                 <div class="content-item">
                     <ul class="list-group">
                         <li class="list-group-item">

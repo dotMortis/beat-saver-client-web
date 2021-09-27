@@ -61,46 +61,54 @@
 }
 
 .main-content {
-    .repo-btn {
-        white-space: nowrap;
-        display: flex;
-        padding: 0 0.5rem;
-        border-radius: 0.25rem;
-        background-color: var(--primary-color);
-        color: var(--surface-a);
-        align-items: center;
-        text-decoration: none;
-        transition: all 200ms ease-in-out;
+    .dl-btn-container {
+        flex-basis: 0;
+        .repo-btn {
+            flex: 1 1 auto;
+            white-space: nowrap;
+            display: flex;
+            padding: 0 0.5rem;
+            border-radius: 0.25rem;
+            background-color: var(--primary-color);
+            color: var(--surface-a);
+            align-items: center;
+            text-decoration: none;
+            transition: all 200ms ease-in-out;
+            font-size: 0.95rem;
+            box-shadow: 0 0 10px 0 black;
 
-        > fa-icon {
-            font-size: 1.5rem;
+            > fa-icon {
+                font-size: 1.25rem;
+            }
+
+            &:hover {
+                background-color: darken(#9fa8da, 5);
+                box-shadow: 0 0 3px 0 white;
+            }
         }
+        .download-btn {
+            flex: 1 1 auto;
+            white-space: nowrap;
+            display: flex;
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.5rem;
+            background-color: lighten(#28a745, 35);
+            color: var(--surface-a);
+            align-items: center;
+            text-decoration: none;
+            transition: all 200ms ease-in-out;
+            font-size: 0.95rem;
+            box-shadow: 0 0 10px 0 black;
 
-        &:hover {
-            background-color: darken(#9fa8da, 5);
-            box-shadow: 0 0 5px white;
-        }
-    }
-    .download-btn {
-        white-space: nowrap;
-        display: flex;
-        min-height: 75px;
-        padding: 0.5rem;
-        border-radius: 0.5rem;
-        background-color: var(--primary-color);
-        color: var(--surface-a);
-        align-items: center;
-        text-decoration: none;
-        transition: all 200ms ease-in-out;
+            > i {
+                font-size: 2rem;
+                padding-right: 0.75rem;
+            }
 
-        > i {
-            font-size: 2rem;
-            padding-right: 0.75rem;
-        }
-
-        &:hover {
-            background-color: darken(#9fa8da, 5);
-            box-shadow: 0 0 5px white;
+            &:hover {
+                background-color: lighten(#28a745, 25);
+                box-shadow: 0 0 3px 0 white;
+            }
         }
     }
 
