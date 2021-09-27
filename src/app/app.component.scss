@@ -128,6 +128,14 @@
 }
 
 :host ::ng-deep {
+    p-carousel {
+        .p-highlight {
+            .p-link {
+                background-color: var(--primary-color) !important;
+            }
+        }
+    }
+
     .img-dialog {
         border-radius: 0.5rem;
         box-shadow: 0 0 3px 0 white;
