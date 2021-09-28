@@ -23,6 +23,13 @@
                 color: var(--primary-color);
             }
         }
+
+        @media (max-width: 575.98px) {
+            h1 {
+                font-size: 2.5rem !important;
+            }
+        }
+
         > .subline {
             font-size: 0.95rem;
             > p {
